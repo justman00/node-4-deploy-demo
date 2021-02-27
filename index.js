@@ -5,11 +5,17 @@ const welcomeRouter = require("./welcome/welcome-router")
 const shoutsRouter = require("./shouts/shouts-router")
 
 const server = express()
-const port = 4000
+// environment variables
+const port = process.env.PORT || 4000;
+
 
 server.use(express.json())
-server.use(helmet())
-server.use(cors())
+server.use(helmet()) // set security headers X-Forwarder-for
+server.use(cors()) // Cross origin Policy
+
+// https://
+// google.com
+// originul-meu-malefic.com
 
 server.use("/", welcomeRouter)
 server.use("/shouts", shoutsRouter)

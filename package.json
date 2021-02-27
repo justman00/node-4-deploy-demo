@@ -1,11 +1,12 @@
 {
 	"private": true,
 	"scripts": {
-		"watch": "nodemon index.js",
+		"watch": "nodemon --require dotenv/config index.js",
 		"start": "node index.js"
 	},
 	"devDependencies": {
 		"cross-env": "^7.0.3",
+		"dotenv": "^8.2.0",
 		"nodemon": "^2.0.7"
 	},
 	"dependencies": {
